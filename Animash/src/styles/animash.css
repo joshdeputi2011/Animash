@@ -1,0 +1,134 @@
+/* Animash Premium Dark Theme */
+/* Strict color palette and design system */
+
+:root {
+  /* Base Colors - Strict Palette */
+  --animash-bg: #0B0B0D;
+  --animash-surface: #121216;
+  --animash-border: #1F1F24;
+  --animash-text: #EDEDED;
+  --animash-text-muted: #9A9AA3;
+  
+  /* Accent Red - Controlled Use Only */
+  --animash-red: #E10600;
+  --animash-red-highlight: #FF4D4D;
+  
+  /* Typography Scale */
+  --animash-text-title: 28px;
+  --animash-text-character: 20px;
+  --animash-text-base: 16px;
+  --animash-text-sm: 14px;
+  --animash-text-xs: 13px;
+  
+  /* Spacing */
+  --animash-nav-height: 64px;
+  --animash-card-radius: 20px;
+  
+  /* Shadows */
+  --animash-shadow-card: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --animash-shadow-card-hover: 0 12px 48px rgba(0, 0, 0, 0.7), 0 0 0 1px var(--animash-red);
+  
+  /* Animation Timings */
+  --animash-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Global Styles */
+body {
+  background: var(--animash-bg);
+  color: var(--animash-text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility Classes */
+.animash-surface {
+  background: var(--animash-surface);
+  border: 1px solid var(--animash-border);
+}
+
+.animash-text-primary {
+  color: var(--animash-text);
+}
+
+.animash-text-muted {
+  color: var(--animash-text-muted);
+}
+
+.animash-red {
+  color: var(--animash-red);
+}
+
+/* Smooth Transitions */
+.animash-transition {
+  transition: all var(--animash-transition);
+}
+
+/* Character Card Hover Glow */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animash-red-glow {
+  box-shadow: 0 0 20px rgba(225, 6, 0, 0.4), 0 0 40px rgba(225, 6, 0, 0.2);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* VS Divider Animation */
+@keyframes pulse-opacity {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animash-vs-pulse {
+  animation: pulse-opacity 2s ease-in-out infinite;
+}
+
+/* Loading Skeleton */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animash-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--animash-surface) 0%,
+    #1a1a1f 50%,
+    var(--animash-surface) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--animash-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--animash-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a2a2f;
+}
